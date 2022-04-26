@@ -13,11 +13,14 @@
         <div>
             <form action="#" method="post">
 
-                <label for="nome">Nome do livro</label>
+                <label for="nome">Nome do livro: </label>
                 <input type="text" name="nomeLivro" placeholder="Nome do livro">
 
                 <label for="editora">Editora do livro</label>
                 <input type="text" name="editoraLivro" placeholder="Editora do Livro">
+
+                <label for="autor">Autor do Livro</label>
+                <input type="text" name="autorLivro" placeholder="Autor do Livro">
 
                 <label for="autor">Autor do Livro</label>
                 <input type="text" name="autorLivro" placeholder="Autor do Livro">
