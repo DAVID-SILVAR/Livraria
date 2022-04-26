@@ -11,7 +11,17 @@
 
     function conexao(){
 
-        $con = new PDO('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+
+        try{
+            
+            $con = new PDO('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+            
+        }catch(PDOException $ex){
+            
+            echo $ex;
+
+        }
+
 
     }
 

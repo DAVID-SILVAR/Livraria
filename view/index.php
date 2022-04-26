@@ -24,6 +24,8 @@
 
                 <label for="autor">Autor do Livro</label>
                 <input type="text" name="autorLivro" placeholder="Autor do Livro">
+
+                <button type="submit">Enviar</button>
             </form>
         </div>
     </body>
