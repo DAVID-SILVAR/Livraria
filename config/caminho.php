@@ -9,4 +9,10 @@
     define('BD_SENHA', '123456');
     define('BD_BANCO', 'bd_livraria');
 
+    function conexao(){
+
+        $con = new PDO('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+
+    }
+
 ?>
