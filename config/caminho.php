@@ -7,22 +7,28 @@
     define('BD_SERVIDOR', '127.0.0.1');
     define('BD_USUARIO', 'root');
     define('BD_SENHA', '123456');
-    define('BD_BANCO', 'bd_livraria');
+    define('BD_BANCO', 'db_livraria');
 
-    function conexao(){
+    $host = '127.0.0.1';
+    $usuario = 'root';
+    $senha_db = '123456';
+    $banco = 'db_livraria';
 
 
-        try{
+    /*try{
             
-            $con = new PDO('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+        $con = new PDO('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+        echo 'certo';
             
-        }catch(PDOException $ex){
-            
-            echo $ex;
-
-        }
-
-
+    }catch(PDOException $ex){
+        echo $ex;
     }
 
+    //$mysqli = new mysqli('BD_SERVIDOR', 'BD_USUARIO', 'BD_SENHA', 'BD_BANCO');
+    $mysqli = new mysqli($host, $usuario, $senha_db, $banco);
+
+    if($mysqli->connect_errno){
+        echo "Falha na conexão: (" . $mysqli->connect_errno . ") " . $mysqli->connect_errno;
+    }*/
+    
 ?>
