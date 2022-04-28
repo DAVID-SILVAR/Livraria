@@ -19,5 +19,9 @@
             return $this->cnpj;
         }
 
+        public function incluir_ediora(){
+            return;
+        }
+
     }
 ?>

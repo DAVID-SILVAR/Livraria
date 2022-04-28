@@ -1,15 +1,14 @@
 <?php
 
-    class Livro{
+    class Livro extends Conecta{
         
         private $nome;
         private $autor;
         private $editora;
+        private $paginas;      
         private $valor;
-        private $paginas;
 
         // Metodos set
-
         public function setNome($string){
            $this->nome = $string; 
         }
@@ -42,6 +41,11 @@
         public function getPaginas(){
             return $this->paginas;
         }
+
+        public function incluir_livro(){
+            return $this->setLivros($this->getNome(), $this->getAutor(), $this->getEditora(), $this->getPaginas(), $this->getValor());
+        }
+
     }
 
 ?>

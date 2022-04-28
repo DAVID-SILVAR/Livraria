@@ -8,7 +8,8 @@
     define('BD_USUARIO', 'root');
     define('BD_SENHA', '123456');
     define('BD_BANCO', 'db_livraria');
-
+    
+    // Caminho atraves das vaiaveis
     $host = '127.0.0.1';
     $usuario = 'root';
     $senha_db = '123456';
