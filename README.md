@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Sistema CRUD simples, porém no padrão MVC utilizando as tecnologias PHP, HTML, CSS e MYSQL para gerenciamento de de livros 
+Sistema CRUD simples, porém no padrão MVC utilizando as tecnologias PHP, HTML, CSS e MYSQL para gerenciamento de livros 
 
 ## Detalhes
 
