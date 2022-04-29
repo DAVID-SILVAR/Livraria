@@ -9,12 +9,12 @@
 
         protected $mysqli;
 
-        public function __consruct(){
+        public function __construct(){
             $this->conexao;
         }
 
         public function conexao(){
-            // com vaiaveis ($host, $usuario, $senha_db, $banco)
+            
             $this->mysqli = new mysqli($host, $usuario, $senha_db, $banco);
         }
 
@@ -31,7 +31,7 @@
                 $i++;
             }*/
 
-            $result = $this->mysqli->query("SELECT * FROM tb_livros ");
+            $result = $this->mysqli->query("SELECT * FROM tb_livros");
             while($row = $result->fetch_array(MYSQL_ASSOC)){
                 $array[] = $row;
             }
@@ -47,7 +47,11 @@
             }else{
                 return false;
             }
-
+        }
+        public function pesquisaLivroId($id){
+            $result = $this->mysqli->query("SELECT * FROM nome='$id'");
+            //$query = $this->mysqli->prepare("SELECT * FROM nome='$id'");
+            return $result->fetch_array(MYSQL_ASSOC);
         }
 
     }
