@@ -1,12 +1,14 @@
 <?php
+    require_once 'Banco.php';
 
-    class Livro extends Conecta{
+
+    class Livro extends Banco {
         
         private $nome;
         private $autor;
         private $editora;
         private $paginas;      
-        private $valor;
+        private $valor;        
 
         // Metodos set
         public function setNome($string){
@@ -42,8 +44,14 @@
             return $this->paginas;
         }
 
-        public function incluir_livro(){
-            return $this->setLivros($this->getNome(), $this->getAutor(), $this->getEditora(), $this->getPaginas(), $this->getValor());
+/*         public function __construct(){
+            return $this->setLivros($this->getNome(), $this->getEditora(), $this->getAutor(), $this->getPaginas(), $this->getValor());
+
+        } */
+
+
+        public function salvar($nome, $editora, $autor, $paginas, $valor){
+            return $this->setLivros($this->getNome(), $this->getEditora(), $this->getAutor(), $this->getPaginas(), $this->getValor());
         }
 
     }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,23 +12,27 @@
     </head>
     <body>
         <div>
-            <form action="#" method="post">
+            <form action= '../controller/cadastro.php' method="post">
 
                 <label for="nome">Nome do livro: </label>
-                <input type="text" name="nomeLivro" placeholder="Nome do livro">
+                <input type="text" name="nome" placeholder="Nome do livro">
 
-                <label for="editora">Editora do livro</label>
-                <input type="text" name="editoraLivro" placeholder="Editora do Livro">
+                <label for="editora">Editora do livro: </label>
+                <input type="text" name="editora" placeholder="Editora do Livro">
 
-                <label for="autor">Autor do Livro</label>
-                <input type="text" name="autorLivro" placeholder="Autor do Livro">
+                <label for="autor">Autor do Livro: </label>
+                <input type="text" name="autor" placeholder="Autor do Livro">
 
-                <label for="autor">Autor do Livro</label>
-                <input type="text" name="autorLivro" placeholder="Autor do Livro">
+                <label for="autor">Total de paginas do livro: </label>
+                <input type="text" name="paginas" placeholder="Total de paginas do Livro">
+
+                <label for="autor">Valor do Livro: </label>
+                <input type="number" name="valor" placeholder="valor total do Livro">
 
                 <button type="submit">Enviar</button>
                 
             </form>
+
         </div>
     </body>
 </html>

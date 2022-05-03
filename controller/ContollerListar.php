@@ -3,11 +3,11 @@
 
     class ListarController{
         
-        private $listar;
+        //private $listar;
 
         public function __construct(){
             
-            $this->listar = new Banco;
+            $listar = new Banco;
             $this->ListarLivros();
 
         }
@@ -34,7 +34,7 @@
         }
 
     }
-    $a  = new ListarController();
-    $this->a->ListarLivros();
+    
+    $listar->getLivros();
 
 ?>
