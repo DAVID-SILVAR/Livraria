@@ -1,22 +1,24 @@
 <?php
-    require_once '../model/Banco.php';
+    require_once '../DAO/LivroDao.php';
     require_once '../model/Livro.php';
+    require_once '../model/Banco.php';
 
-    $con = new Banco;
-
-    $objLivro = new Livro;
-
-    $objLivro->setNome($_POST['nome']);
-    $objLivro->setEditora($_POST['editora']);
-    $objLivro->setAutor($_POST['autor']);
-    $objLivro->setPaginas($_POST['paginas']);
-    $objLivro->setValor($_POST['valor']);
-
-    $con->salvar($objLivro);
+    //print_r($_POST);
 
 
-    
 
+    $liv = new Livro();
+
+    $liv->setNome($_POST['nome']);
+    $liv->setEditora($_POST['editora']);
+    $liv->setAutor($_POST['autor']);
+    $liv->setPaginas($_POST['paginas']);
+    $liv->setValor($_POST['valor']);
+
+    $objconexao = new Banco();
+
+    $DAO = new LivroDao($objconexao, $liv);
+    $DAO->salvar();
 
 
 ?>

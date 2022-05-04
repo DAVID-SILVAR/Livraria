@@ -1,40 +1,23 @@
 <?php
-    require_once '../model/Conecta.php';
+    session_start();
 
-    class ListarController{
-        
-        //private $listar;
+    require_once '../DAO/LivroDao.php';
+    require_once '../model/Livro.php';
+    require_once '../model/Banco.php';
 
-        public function __construct(){
-            
-            $listar = new Banco;
-            $this->ListarLivros();
+    $liv = new Livro();
+    $objBanco = new Banco();
 
-        }
+    $dao = new LivroDao($objBanco, $liv);
 
-        public function ListarLivros(){
+    $lista = $dao->listar();
+   /*  echo '<pre>';
+    print_r($lista);
+    echo '</pre>';
+ */
+    echo '<pre>';
+    print_r($_SESSION['listaLivro'] = $lista) ;
+    echo '</pre>';
 
-            $row = $this->listar->getLivros();
-
-            foreach ($row as $values){
-                
-                echo $values['id'];
-                echo '<br>';
-                echo $values['nome'];
-                echo '<br>';
-                echo $values['editora'];
-                echo '<br>';
-                echo $values['autor'];
-                echo '<br>';
-                echo $values['paginas'];
-                echo '<br>';
-                echo $values['valor'];
-
-            }
-        }
-
-    }
-    
-    $listar->getLivros();
 
 ?>

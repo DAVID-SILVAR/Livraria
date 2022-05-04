@@ -3,7 +3,7 @@
 
 
     class Livro extends Banco {
-        
+        private $id;
         private $nome;
         private $autor;
         private $editora;
@@ -11,6 +11,9 @@
         private $valor;        
 
         // Metodos set
+        public function setId($string){
+            $this->id = $string;
+        }
         public function setNome($string){
            $this->nome = $string; 
         }
@@ -28,6 +31,9 @@
         }
 
         // Metodos get
+        public function getId(){
+            return $this->id;
+        }
         public function getNome(){
             return $this->nome;
         }
@@ -48,10 +54,15 @@
             return $this->setLivros($this->getNome(), $this->getEditora(), $this->getAutor(), $this->getPaginas(), $this->getValor());
 
         } */
+        public function incluir(){
 
-
-        public function salvar($nome, $editora, $autor, $paginas, $valor){
-            return $this->setLivros($this->getNome(), $this->getEditora(), $this->getAutor(), $this->getPaginas(), $this->getValor());
+            $liv = $this->setLivro(
+                $this->getNome(), 
+                $this->getEditora(),
+                $this->getAutor(),
+                $this->getPaginas(),
+                $this->getValor()
+            );
         }
 
     }

@@ -1,4 +1,8 @@
+<?php
 
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,15 +28,37 @@
                 <input type="text" name="autor" placeholder="Autor do Livro">
 
                 <label for="autor">Total de paginas do livro: </label>
-                <input type="text" name="paginas" placeholder="Total de paginas do Livro">
+                <input type="number" name="paginas" placeholder="Total de paginas do Livro">
 
                 <label for="autor">Valor do Livro: </label>
                 <input type="number" name="valor" placeholder="valor total do Livro">
 
                 <button type="submit">Enviar</button>
+
+                <button type="submit"><a href="../controller/ControllerListar"></a>Listar</button>
                 
             </form>
 
         </div>
+
+
+        <?php 
+        
+         $t = $_SESSION['listaLivro'];
+        
+        /* echo'<pre>';
+        print_r($t);
+        echo'</pre>';  */
+        
+        foreach($t  as $values){  
+            echo'</br>';
+            echo $values->nome;
+ 
+
+          }
+            
+            
+            
+        ?>
     </body>
 </html>
