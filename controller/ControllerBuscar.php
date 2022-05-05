@@ -8,16 +8,16 @@
     $liv = new Livro();
     $objBanco = new Banco();
 
+    $liv->setId($_POST['idBuscar']);
+
     $dao = new LivroDao($objBanco, $liv);
 
-    $lista = $dao->listar();
-/*     echo '<pre>';
-    print_r($lista);
-    echo '</pre>'; */
- 
-/*     echo '<pre>';
-    print_r($_SESSION['listaLivro'] = $lista);
-    echo '</pre>';  */
+    $obj = $dao->buscarId();
+
+    echo '<pre>';
+    print_r($_SESSION['buscarId'] = $obj) ;
+    echo '</pre>';
+
 
 
 ?>

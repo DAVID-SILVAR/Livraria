@@ -1,6 +1,16 @@
 <?php
 
     session_start();
+            
+    //$t = $_SESSION['listaLivro'];
+            
+    echo'<pre>';
+    print_r($_SESSION['listaLivro']);
+    echo'</pre>'; 
+
+
+     
+
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +32,7 @@
                 <input type="text" name="nome" placeholder="Nome do livro">
 
                 <label for="editora">Editora do livro: </label>
-                <input type="text" name="editora" placeholder="Editora do Livro">
+                <input type="number" name="editora" placeholder="Editora do Livro">
 
                 <label for="autor">Autor do Livro: </label>
                 <input type="text" name="autor" placeholder="Autor do Livro">
@@ -34,31 +44,8 @@
                 <input type="number" name="valor" placeholder="valor total do Livro">
 
                 <button type="submit">Enviar</button>
-
-                <button type="submit"><a href="../controller/ControllerListar"></a>Listar</button>
-                
             </form>
-
         </div>
 
-
-        <?php 
-        
-         $t = $_SESSION['listaLivro'];
-        
-        /* echo'<pre>';
-        print_r($t);
-        echo'</pre>';  */
-        
-        foreach($t  as $values){  
-            echo'</br>';
-            echo $values->nome;
- 
-
-          }
-            
-            
-            
-        ?>
     </body>
 </html>
