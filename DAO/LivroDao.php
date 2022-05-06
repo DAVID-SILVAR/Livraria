@@ -31,7 +31,7 @@
             }
         }
 
-        public function deletar(){
+        public function excluir(){
             
             try{
 
@@ -90,7 +90,7 @@
             }
         }
 
-        public function atualizar(){
+        public function editar(){
 
             try{
                 $sql = 'UPDATE tb_livos SET nome_livro = :nome, livro_editora_id = :id_editora, autor_livro = :autor, paginas_livro = :paginas, valor_livro = :valor';
@@ -107,7 +107,6 @@
             }catch(Exception $e){
                 return $e->getCode().'Mensagem: '.$e->getMessage();
             }
-
 
         }
 

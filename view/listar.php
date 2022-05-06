@@ -22,7 +22,7 @@ echo '</pre>';   */
     <table class="table">
 
         <div>
-            <thead border="1px" cellpadding="5px" cellspacing="0">
+            <thead>
                 <tr>
                     <th scope="col">Id Livro</th>
                     <th scope="col">Nome do Livro</th>
