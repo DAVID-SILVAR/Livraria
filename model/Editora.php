@@ -1,27 +1,25 @@
 <?php
 
     class Editora{
+        
         private $nome_editora;
-        private $cnpj;
+        private $id_editora;
 
 
         public function setNome($string){
             $this->nome_editora = $string;
         }
         public function setCnpj($string){
-            $this->cnpj = $string;
+            $this->id_editora = $string;
         }
 
         public function getNome(){
             return $this->nome_editora;
         }
-        public function getCnpj(){
-            return $this->cnpj;
+        public function getId(){
+            return $this->id_editora;
         }
 
-        public function incluir_ediora(){
-            return;
-        }
 
     }
 ?>

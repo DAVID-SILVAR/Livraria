@@ -1,14 +1,15 @@
 <?php
+
     require_once '../DAO/LivroDao.php';
     require_once '../model/Livro.php';
     require_once '../model/Banco.php';
+    session_start();
 
-
-/*     echo '<pre>';
-    print_r($_POST);
-    echo '</pre>'; */
-
-
+     
+   /*  echo '<pre>';
+    print_r($_GET);
+    echo '</pre>' ;   
+ */
     class LivroController{
 
         public function __construct($metodo){
@@ -30,17 +31,17 @@
                 case 'listar':
                     $this->listar();
                     break;
-                case 'editar':
-                    $this->editar();
+                case 'buscar':
+                    $this->buscar();
+                    break;
+                case 'atualizar':
+                    $this->atualizar();
                     break;
             }
-
         }
 
-
-
         public function salvar(){
-
+            
             $liv = new Livro();
             $objconexao = new Banco();
             $dao = new LivroDao($objconexao, $liv);
@@ -52,7 +53,10 @@
             $liv->setValor($_POST['valor']);
 
             $dao = new LivroDao($objconexao, $liv);
-            $dao->salvar();
+            $dao->salvar();  
+            
+            header('location: ../view/index.php');
+
         }
 
         public function excluir(){
@@ -60,9 +64,13 @@
             $liv = new Livro();
             $objBanco = new Banco();
 
-            $liv->setId($_POST['id']);
+            $livroId = $_GET['id'];
+
+            $liv->setId($livroId);
 
             $dao = new LivroDao($objBanco, $liv);
+            $dao->excluir();
+            header('location:../view/index.php');
         }
 
         public function listar(){
@@ -71,42 +79,54 @@
             $objBanco = new Banco();
 
             $dao = new LivroDao($objBanco, $liv);
-            $dao->listar();
+
+            
+            $lista = $dao->listar();
+
+            $_SESSION['listaLivro'] = $lista;
+
+            header("location: ../view/listar.php ");
 
         }
 
-        public function editar(){
+        public function buscar(){
+            
+            $liv = new Livro();
+            $objBanco = new Banco();
+            $dao = new LivroDao($objBanco, $liv);
 
+            $liv->setId($_GET['id']);
+
+            $busca = $dao->buscar();
+
+            $_SESSION['buscar'] = $busca;
+
+            header("location: ../view/editar.php ");
 
         }
+
+        public function atualizar(){
+
+            $liv = new Livro();
+            $objBanco = new Banco();
+
+            $liv->setNome($_POST['nome']);
+            $liv->setEditora($_POST['editora']);
+            $liv->setAutor($_POST['autor']);
+            $liv->setPaginas($_POST['paginas']);
+            $liv->setValor($_POST['valor']);
+
+            $dao = new LivroDao($objBanco, $liv);
+
+            print_r($dao->atualizar($liv));
+
+        }
+
 
     }
 
     $metodo = $_GET['metodo'];
-
     $liv = new LivroController($metodo);
-
-
-/*     if(isset($_GET['metodo']) && $_GET['metodo'] == 'salvar'){
-        
-        $liv->salvar();
-
-    }else if(isset($_GET['metodo']) && $_GET['metodo'] == 'excluir'){
-
-        $liv-> excluir();
-
-    }else if (isset($_GET['metodo']) && $_GET['metodo'] == 'listar' ){
-        
-        $liv->listar();
-
-    }else if (isset($_GET['metodo']) && $_GET['metodo'] == 'editar' ){
-        
-        $liv->editar();
-
-    } */
-
-
-
 
 ?>
 

@@ -26,6 +26,7 @@
                 $stmt->bindValue(':valor', $this->book->getValor());
                 $stmt->execute();
 
+
             } catch (PDOException $e){
                 return $e->getCode().'Mensagem: '.$e->getMessage();
             }
@@ -68,7 +69,7 @@
 
         }
 
-        public function buscarId(){
+        public function buscar(){
 
             try{
 
@@ -79,34 +80,30 @@
                 $stmt->execute();
                 $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-                if($dados->num_rows == 0){
-                    return $dados;
-                }else{
-                    return 'livro não existe!';
-                }
+                return $dados;
 
             }catch(Exception $e){
                 return $e->getCode().'Mensagem: '.$e->getMessage();
             }
         }
 
-        public function editar(){
+        public function atualizar($a){
 
-            try{
-                $sql = 'UPDATE tb_livos SET nome_livro = :nome, livro_editora_id = :id_editora, autor_livro = :autor, paginas_livro = :paginas, valor_livro = :valor';
+                $objLivro = $a;
+                $sql = "update tb_livros set nome_livro = ?, livro_editora_id = ?, autor_livro = ?, paginas_livro = ?, valor_livro = ? where id_livro = ?";
 
-                $stmt-> bindValue(":nome", $this->book->getNome());
-                $stmt->bindValue(":valor_livro", $this->book->getEditora());
-                $stmt->bindValue(":autor", $this->book->getAutor());
-                $stmt->bindValue(":paginas", $this->book->getPaginas());
-                $stmt->bindValue(":valor", $this->book->getValor());
-    
                 $stmt = $this->banco->prepare($sql);
-                $stmt->execute();
+                $stmt->bindValue(1, $objLivro->getNome());
+                $stmt->bindValue(2, $objLivro->getEditora());
+                $stmt->bindValue(3, $objLivro->getAutor());
+                $stmt->bindValue(4, $objLivro->getPaginas());
+                $stmt->bindValue(5, $objLivro->getValor());
+                $stmt->bindValue(6, $objLivro->getId());
+    
+                
 
-            }catch(Exception $e){
-                return $e->getCode().'Mensagem: '.$e->getMessage();
-            }
+                return $stmt->execute();
+
 
         }
 

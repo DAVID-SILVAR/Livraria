@@ -9,10 +9,11 @@
 <body>
 
     <div>
-        <div><a href="../controller/ControllerLivro.php?metodo=editar">Editar</a></div>
-        <div><a href="#">Excluir</a></div>
-        <div><a href="#">Listar</a></div>
-        <div><a href="#">Deletar</a></div>
+        <div><a href="form.php">Inserir</a></div>
+        <div><a href="../controller/ControllerLivro.php?metodo=listar">Listar</a></div>
+<!--         <div><a href="../controller/ControllerLivro.php?metodo=excluir">Excluir</a></div>
+        <div><a href="../controller/ControllerLivro.php?metodo=listar">Listar</a></div>
+        <div><a href="#">Deletar</a></div> -->
     </div>
     
 </body>

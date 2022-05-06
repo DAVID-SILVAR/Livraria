@@ -1,16 +1,15 @@
 <?php
-
     session_start();
-            
-    //$t = $_SESSION['listaLivro'];
-            
-/*     echo'<pre>';
-    print_r($_SESSION['listaLivro']);
-    echo'</pre>'; */ 
 
+    $buscar = $_SESSION['buscar'];
 
+    echo '<pre>';
+    print_r($buscar);
+    echo '</pre>';
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,7 +23,7 @@
     </head>
     <body>
         <div>
-            <form action= '../controller/ControllerLivro.php?metodo=salvar' method="post">
+            <form action= '../controller/ControllerLivro.php?metodo=atualizar' method="post">
 
                 <label for="nome">Nome do livro: </label>
                 <input type="text" name="nome" placeholder="Nome do livro">
@@ -47,3 +46,9 @@
 
     </body>
 </html>
+
+
+
+
+
+
