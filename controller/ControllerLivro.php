@@ -85,6 +85,8 @@
 
             $_SESSION['listaLivro'] = $lista;
 
+           
+
             header("location: ../view/listar.php ");
 
         }

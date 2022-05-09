@@ -4,13 +4,11 @@
             
     //$t = $_SESSION['listaLivro'];
             
-/*     echo'<pre>';
+/*      echo'<pre>';
     print_r($_SESSION['listaLivro']);
     echo'</pre>'; */ 
 
-
-
-?>
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -18,32 +16,46 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	    <title>Livraria Moderna</title>
-
+        <!-- Estyles-->
         <link rel="stylesheet" type="text/css" href="estilo.css">
+
+        <link rel="stylesheet" href="../assets/css/form.css">
 
     </head>
     <body>
-        <div>
-            <form action= '../controller/ControllerLivro.php?metodo=salvar' method="post">
+        <div class="enviar">
+            <form class="formulario" action= '../controller/ControllerLivro.php?metodo=salvar' method="post">
+                <h1 class="formularioTitulo">Dados</h1>
 
-                <label for="nome">Nome do livro: </label>
-                <input type="text" name="nome" placeholder="Nome do livro">
+                
+                <label class="formularioLabel" for="nome">Nome do livro: </label>
+                <input class="formularioInput" type="text" name="nome" placeholder="">
+                
 
-                <label for="editora">Editora do livro: </label>
-                <input type="number" name="editora" placeholder="Editora do Livro">
+                <label class="formularioLabel" for="editora">Editora do livro: </label>
+                <input class="formularioInput" type="number" name="editora" placeholder="">
 
-                <label for="autor">Autor do Livro: </label>
-                <input type="text" name="autor" placeholder="Autor do Livro">
 
-                <label for="autor">Total de paginas do livro: </label>
-                <input type="number" name="paginas" placeholder="Total de paginas do Livro">
+                <label class="formularioLabel" for="autor">Autor do Livro: </label>
+                <input class="formularioInput" type="text" name="autor" placeholder="">
 
-                <label for="autor">Valor do Livro: </label>
-                <input type="number" name="valor" placeholder="valor total do Livro">
 
-                <button type="submit">Enviar</button>
+                <label class="formularioLabel" for="autor">Total de paginas do livro: </label>
+                <input class="formularioInput" type="number" name="paginas" placeholder="">
+
+
+                <label class="formularioLabel" for="autor">Valor do Livro: </label>
+                <input class="formularioInput" type="number" name="valor" placeholder="">
+
+                <button 
+                class="formularioSubmit" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+                Enviar</button>
             </form>
         </div>
-
     </body>
 </html>

@@ -60,7 +60,8 @@
                     $array[] = $row;
                 } */
                 $array = $stmt->fetchAll(PDO::FETCH_OBJ);
-    
+                
+                
                 return $array;
 
             }catch(Exception $e){

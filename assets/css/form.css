@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+body{
+  margin-inline: 0;
+  font-family: sans-serif;
+
+}
+
+.formulario{
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px 1px #000000ce;
+  position: relative;
+}
+
+.formularioTitulo{
+  text-align: center;
+  margin-top: 0;
+  padding: 2rem;
+  color: rgba(0,0,0,0.7);
+
+}
+
+.formularioInput,
+.formularioLabel,
+.formularioSubmit{
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.formularioInput{
+  padding:20px ;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.3);
+  margin-bottom: 40px;
+}
+.formularioInput:focus{
+  outline: 1px solid rgba(0,0,0,0.7);
+}
+
+.formularioInput:focus+ .formularioLabel{
+  margin-top: -160px;
+}
+
+.formularioLabel{
+  padding-left: 15px;
+  position: absolute;
+  margin-top: -100px;
+  z-index: -20px;
+  color: rgba(0,0,0,0.5);
+  transition: all 0.2s;
+}
+
+.enviar form button{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  
+  color: #000000;
+  
+  font: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  border: none;
+}
+
+.enviar button:hover{
+  background: #f10202;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 
+  0 0 5px #f10202,
+  0 0 25px #f10202,
+  0 0 50px #f10202,
+  0 0 100px #f10202
+  ;
+}
+
+.enviar button span{
+  position: absolute;
+  display: block;
+}
+
+.enviar button span:nth-child(1){
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f10202);
+  /*animation: bnt-anim1 1s linear infinite;*/
+}
+
+@keyframes bnt-anim1{
+  0%{
+    left: -100%;
+  }
+  50%, 100%{
+    left: 100%;
+  }
+}
+
+.enviar button span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, #f10202);
+  /*animation: bnt-anim2 1s linear infinite;
+  animation-delay: .25s;*/
+}
+
+@keyframes bnt-anim2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+
+.enviar button span:nth-child(3){
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #f10202);
+  /*animation: bnt-anim3 1s linear infinite;
+  animation-delay: .5s;*/
+}
+
+@keyframes bnt-anim3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+
+.enviar button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #f10202);
+  /*animation: bnt-anim4 1s linear infinite;
+  animation-delay: .75s;*/
+}
+
+@keyframes bnt-anim4{
+  0%{
+  bottom: -100%;
+  }
+  50%, 100%{
+    bottom: 100%;
+  }
+}
+
+@media (min-width: 1280px) and (max-width:1680px) {
+
+}

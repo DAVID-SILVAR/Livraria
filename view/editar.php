@@ -3,9 +3,9 @@
 
     $buscar = $_SESSION['buscar'];
 
-    echo '<pre>';
+/*     echo '<pre>';
     print_r($buscar);
-    echo '</pre>';
+    echo '</pre>'; */
 
 ?>
 
@@ -24,6 +24,24 @@
     <body>
         <div>
             <form action= '../controller/ControllerLivro.php?metodo=atualizar' method="post">
+                <table>
+
+
+                <?php
+                    foreach($buscar as $values){?>
+                    <tr>
+                        <td> <?=  $values->id_livro ?> </td>
+                        <td> <?=  $values->nome_livro ?></td>
+                        <td> <?=  $values->livro_editora_id ?> </td>
+                        <td> <?=  $values->autor_livro ?></td>
+                        <td> <?=  $values->paginas_livro ?></td>
+                        <td> <?=  $values->valor_livro ?></td> 
+
+                    </tr>
+                    <?php }?>
+
+                </table>
+
 
                 <label for="nome">Nome do livro: </label>
                 <input type="text" name="nome" placeholder="Nome do livro">
@@ -40,7 +58,7 @@
                 <label for="autor">Valor do Livro: </label>
                 <input type="number" name="valor" placeholder="valor total do Livro">
 
-                <button type="submit">Enviar</button>
+                <button type="submit">Editar</button>
             </form>
         </div>
 
