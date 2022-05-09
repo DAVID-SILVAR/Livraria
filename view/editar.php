@@ -5,7 +5,7 @@
 
 /*     echo '<pre>';
     print_r($buscar);
-    echo '</pre>'; */
+    echo '</pre>'; */ 
 
 ?>
 
@@ -16,53 +16,42 @@
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	    <title>Livraria Moderna</title>
+        <link rel="stylesheet" href="../assets/css/editar.css">
 
-        <link rel="stylesheet" type="text/css" href="estilo.css">
+	    <title>Livraria Moderna</title>
 
     </head>
     <body>
-        <div>
-            <form action= '../controller/ControllerLivro.php?metodo=atualizar' method="post">
-                <table>
+ 
+ <div class="enviar">  
 
+     <form action= '../controller/ControllerLivro.php?metodo=atualizar' method="post">
 
-                <?php
-                    foreach($buscar as $values){?>
-                    <tr>
-                        <td> <?=  $values->id_livro ?> </td>
-                        <td> <?=  $values->nome_livro ?></td>
-                        <td> <?=  $values->livro_editora_id ?> </td>
-                        <td> <?=  $values->autor_livro ?></td>
-                        <td> <?=  $values->paginas_livro ?></td>
-                        <td> <?=  $values->valor_livro ?></td> 
+         <h1 class="formularioTitulo">Editar</h1>
 
-                    </tr>
-                    <?php }?>
+         <label class="formularioLabel" for="nome">Nome do livro: </label>
+         <input type="text" name="nome" value = "<?= $buscar[0]->nome_livro ?>" placeholder="Nome do livro">
 
-                </table>
+         <label class="formularioLabel" for="editora">Editora do livro: </label>
+         <input type="number" name="editora" value = "<?= $buscar[0]->livro_editora_id ?>" placeholder="Editora do Livro">
 
+         <label class="formularioLabel" for="autor">Autor do Livro: </label>
+         <input type="text" name="autor" value = "<?= $buscar[0]->autor_livro ?>" placeholder="Autor do Livro">
 
-                <label for="nome">Nome do livro: </label>
-                <input type="text" name="nome" placeholder="Nome do livro">
+         <label class="formularioLabel" for="autor">Total de paginas do livro: </label>
+         <input type="number" name="paginas" value = "<?= $buscar[0]->paginas_livro ?>" placeholder="Total de paginas do Livro">
 
-                <label for="editora">Editora do livro: </label>
-                <input type="number" name="editora" placeholder="Editora do Livro">
+         <label class="formularioLabel" for="autor">Valor do Livro: </label>
+         <input type="number" name="valor" value = "<?= $buscar[0]->valor_livro ?>" placeholder="valor total do Livro">
 
-                <label for="autor">Autor do Livro: </label>
-                <input type="text" name="autor" placeholder="Autor do Livro">
+         <input type="hidden" value = "<?= $buscar[0]->id_livro ?>" name="EditarId" >
 
-                <label for="autor">Total de paginas do livro: </label>
-                <input type="number" name="paginas" placeholder="Total de paginas do Livro">
+         <button type="submit">Atulizar</button>
+     </form>
 
-                <label for="autor">Valor do Livro: </label>
-                <input type="number" name="valor" placeholder="valor total do Livro">
+ </div>
 
-                <button type="submit">Editar</button>
-            </form>
-        </div>
-
-    </body>
+</body>
 </html>
 
 

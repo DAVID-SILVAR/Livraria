@@ -112,15 +112,19 @@
             $liv = new Livro();
             $objBanco = new Banco();
 
+            //$liv->setId($_POST['EditarId']);
             $liv->setNome($_POST['nome']);
             $liv->setEditora($_POST['editora']);
             $liv->setAutor($_POST['autor']);
             $liv->setPaginas($_POST['paginas']);
             $liv->setValor($_POST['valor']);
+            $liv->setId($_POST['EditarId']);
 
             $dao = new LivroDao($objBanco, $liv);
 
-            print_r($dao->atualizar($liv));
+            $dao->atualizar($liv);
+
+            header("location: ../view/index.php");
 
         }
 

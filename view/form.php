@@ -27,25 +27,24 @@
             <form class="formulario" action= '../controller/ControllerLivro.php?metodo=salvar' method="post">
                 <h1 class="formularioTitulo">Dados</h1>
 
-                
-                <label class="formularioLabel" for="nome">Nome do livro: </label>
                 <input class="formularioInput" type="text" name="nome" placeholder="">
+                <label class="formularioLabel" for="nome">Nome do livro: </label>
+                
+                
+                <input class="formularioInput" type="number" name="editora" placeholder="">
+                <label class="formularioLabel" for="editora">Editora do livro: </label>
+                
+                <input class="formularioInput" type="text" name="autor" placeholder="">
+                <label class="formularioLabel" for="autor">Autor do Livro: </label>
                 
 
-                <label class="formularioLabel" for="editora">Editora do livro: </label>
-                <input class="formularioInput" type="number" name="editora" placeholder="">
-
-
-                <label class="formularioLabel" for="autor">Autor do Livro: </label>
-                <input class="formularioInput" type="text" name="autor" placeholder="">
-
-
-                <label class="formularioLabel" for="autor">Total de paginas do livro: </label>
                 <input class="formularioInput" type="number" name="paginas" placeholder="">
+                <label class="formularioLabel" for="autor">Total de paginas do livro: </label>
 
 
-                <label class="formularioLabel" for="autor">Valor do Livro: </label>
                 <input class="formularioInput" type="number" name="valor" placeholder="">
+                <label class="formularioLabel" for="autor">Valor do Livro: </label>
+                
 
                 <button 
                 class="formularioSubmit" type="submit">
