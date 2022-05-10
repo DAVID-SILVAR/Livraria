@@ -87,3 +87,74 @@ a{
 
   background: rgb(240, 15, 15);
 }
+/*BreakPoint Mobile */
+@media (max-width: 480px){
+  .content{width: 94%;}
+  
+  
+  .tbl-header thead tr{
+    display:none;
+    
+  }
+  
+  .tbl-content tbody td{
+     display: flex;
+     flex-direction: column; 
+     position: relative;
+     
+    } 
+
+    .tbl-content{
+      height: 485px;
+      width: auto;
+    }
+
+    td{
+      padding: 20px;
+    }
+
+
+      
+  }
+/*Mobile*/
+  @media (min-width: 390px) and (max-width: 475px){
+    
+    .tbl-content{
+      height: 570px;
+    }
+    
+    td{
+      padding: 25px;
+    }
+
+
+  }
+/*BreakPoint Tablet*/
+  @media (min-width: 481px) and (max-width: 700px){
+    .content{width: 94%;}
+  
+  
+    .tbl-header thead tr{
+      display:none;
+      
+    }
+    
+    .tbl-content tbody td{
+      display: flex;
+       flex-direction: column; 
+       position: relative;
+    }
+    .tbl-content{
+      height: 570px;
+    }
+    
+    td{
+      padding: 25px;
+    }
+
+
+  }
+
+@media (min-width:700px) {
+
+}

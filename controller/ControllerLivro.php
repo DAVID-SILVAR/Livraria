@@ -122,6 +122,9 @@
 
             $dao = new LivroDao($objBanco, $liv);
 
+            /* print_r($liv);
+            exit(); */
+
             $dao->atualizar($liv);
 
             header("location: ../view/index.php");
