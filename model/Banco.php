@@ -7,7 +7,7 @@
 
         public function Conecta(){
             try{
-                $obj = new PDO("mysql:host=127.0.0.1;dbname=db_livraria","root", "123456");
+                $obj = new PDO("mysql:host=127.0.0.1;dbname=db_livraria","root", "123456", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
                
                 return $obj;
 

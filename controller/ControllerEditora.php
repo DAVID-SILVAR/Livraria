@@ -35,12 +35,14 @@
 
             $edit = new Editora();
             $objconexao = new Banco();
-            $dao = new LivroDao($objconexao, $edit);
+            $dao = new EditoraDao($objconexao, $edit);
 
             $edit->setNome($_POST['nome']);
 
-            $dao = new LivroDao($objconexao, $edit);
+            //$dao = new EditoraDao($objconexao, $edit);
             $dao->salvar();
+
+            header('location: ../view/formEditora.php?editoraCriada');
         }
 
         public function excluir(){
@@ -76,7 +78,7 @@
 
     $metodo = $_GET['metodo'];
 
-    $liv = new LivroController($metodo);
+    $liv = new EditoraController($metodo);
 
 
 ?>

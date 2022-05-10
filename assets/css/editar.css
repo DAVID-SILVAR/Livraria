@@ -171,6 +171,55 @@ body{
     bottom: 100%;
   }
 }
+
+/*Animação do botão voltar*/
+
+.return  .return-2{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  top: 1rem;
+  
+  color: #fffdfd;
+  background-color: #312a2a;
+
+  font: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  border: none;
+  margin-left: 47rem;
+  
+}
+
+.return .return-2:hover{
+  background: #f10202;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 
+  0 0 5px #f10202,
+  0 0 25px #f10202,
+  0 0 50px #f10202,
+  0 0 100px #f10202
+  ;
+}
+
+.return .return-2 span{
+  position: absolute;
+  display: block;
+  
+}
+
+.return-2{
+  display: block;
+  width: 10%;
+  font-size: 1rem;
+}
+
+
 /*BreakPoints para Mobile */
 @media (min-width:320px) and (max-width:480px) {
   .formularioTitulo{
@@ -200,6 +249,18 @@ body{
   .formularioLabel{
     margin-top: -70px;
   }
+
+  .return  .return-2{
+    margin-left: auto;
+    text-align: center;
+    top: 2.5rem;
+    
+  }
+
+  .return-2{
+    width: calc(100% - 200px);
+    left: 7rem;
+  }
  
 }
 /*BreakOints Ipads e Tablets*/
@@ -227,6 +288,17 @@ body{
   .formularioInput{
     padding: 10px;
     
+  }
+  .return  .return-2{
+    margin-left: auto;
+    text-align: center;
+    top: 2.5rem;
+    
+  }
+
+  .return-2{
+    width: calc(90% - 200px);
+    left: 8rem;
   }
 }
 /*Break Point Laptops*/
@@ -259,4 +331,17 @@ body{
     .formularioLabel{
       margin-top: -70px;
     }
-}
+    .return  .return-2{
+    
+      margin-left: 50%;
+      text-align: center;
+      top: 2.5rem;
+      
+    }
+  
+    .return-2{
+      width: 14rem;
+      left: -6.5rem;
+    }
+
+  }

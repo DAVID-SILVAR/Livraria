@@ -46,18 +46,18 @@ body{
 }
 
 /*Animação dos texto do Input dentro da caixa*/
-.formularioInput:focus{
+/* .formularioInput:focus{
   outline: 1px solid rgb(255, 255, 255);
 }
 
 .formularioInput:focus+ .formularioLabel{
   margin-top: -160px;
-}
+} */
 /*Fim da animação do texto do Input*/
 .formularioLabel{
   padding-left: 15px;
   position: absolute;
-  margin-top: -100px;
+  margin-top: -156px;
   z-index: -20px;
   color: rgb(255, 254, 254);
   transition: all 0.2s;
@@ -200,11 +200,11 @@ body{
     
   }
   .formularioLabel{
-    margin-top: -70px;
-  }
-  .formularioInput:focus+ .formularioLabel{
     margin-top: -100px;
   }
+/*   .formularioInput:focus+ .formularioLabel{
+    margin-top: -100px;
+  } */
  
 }
 /*BreakOints Ipads e Tablets*/
@@ -235,11 +235,11 @@ body{
   }
 
   .formularioLabel{
-    margin-top: -70px;
-  }
-  .formularioInput:focus+ .formularioLabel{
     margin-top: -100px;
   }
+/*   .formularioInput:focus+ .formularioLabel{
+    margin-top: -100px;
+  } */
 }
 /*Break Point Laptops*/
 @media (min-width:769px) and (max-width: 1279px){
@@ -269,9 +269,9 @@ body{
       
     }
     .formularioLabel{
-      margin-top: -70px;
-    }
-    .formularioInput:focus+ .formularioLabel{
       margin-top: -100px;
     }
+/*     .formularioInput:focus+ .formularioLabel{
+      margin-top: -100px;
+    } */
 }
